@@ -1,0 +1,21 @@
+<div class="row justify-content-end">
+  <div class="poruka alert alert-success col-lg-4 col-right" role="alert" ng-if="pr.poruka">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>{{pr.poruka}}</strong>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <img ng-src="proizvodi/{{pr.proizvod.slika}}" alt="webshop.com" height="300">
+  </div>
+  <div class="col-lg-6">
+      <h3>{{pr.proizvod.naziv}}</h3>
+      <h3>{{pr.proizvod.cena}}€</h3>
+      <p>{{pr.proizvod.opis}}</p>
+      <div ng-if="pr.logovan">
+        <button type="button" ng-click="pr.dodajUKorpu(el.id)" 
+        class="btn btn-success col-lg-12">Dodaj u korpu</button>
+      </div>
+  </div>
+</div>

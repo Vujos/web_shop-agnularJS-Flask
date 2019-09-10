@@ -1,0 +1,76 @@
+<div class="row justify-content-end">
+    <div class="poruka alert alert-success col-lg-4 col-right" role="alert" ng-if="kp.poruka">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>{{kp.poruka}}</strong>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Slika</th>
+            <th>Naziv</th>
+            <th>Cena</th>
+            <th>Kolicina</th>
+            <th>Ukupna cena</th>
+            <th>Kupi</th>
+            <th>Izbaci iz korpe</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="el in kp.korpa">
+        <td> <img ng-src="proizvodi/{{el.slika}}" data-toggle="modal" data-target="#opsirinije"
+            ng-click="pr.dobaviProizvod(el.id)" alt="webshop.com" width="75"></td>
+        <td>{{el.naziv}}</td>
+        <td>{{el.cena}}€</td>
+        <td><input type="number" name="quantity" ng-model="el.kolicina"
+            min="1" max="{{el['proizvod.kolicina']}}" ng-change="kp.ukupnaCena()"></td>
+        <td>{{el.cena*el.kolicina}}€</td>
+        <td><button type="submit" class="btn btn-success" ng-click="kp.napraviRacun(el.id, el.kolicina, false)">Kupi</button></td>
+        <td><button type="submit" ng-click="kp.ukloniIzKorpe(el.id)"
+        class="btn btn-danger">Izbaci iz korpe</button></td>
+    </tr>
+    </tbody>
+</table>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Ukupna cena</th>
+            <th class="float-right">Kupi sve</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td>{{kp.ukupna}}€</td>
+        <td><button type="submit" ng-click="kp.napraviRacun(el.id, el.kolicina, true)" class="btn btn-success float-right">Kupi sve</button></td>
+    </tbody>
+</table>
+    
+
+<h3>Kupljeni proizvodi</h3>
+
+<table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Slika</th>
+                <th>Naziv</th>
+                <th>Cena</th>
+                <th>Kolicina</th>
+                <th>Ukupna cena</th>
+                <th>Datum kupovine</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="el in kp.racun">
+            <td> <img ng-src="proizvodi/{{el.slika}}" data-toggle="modal" data-target="#opsirinije"
+                ng-click="pr.dobaviProizvod(el.id)" alt="webshop.com" width="75"></td>
+            <td>{{el.naziv}}</td>
+            <td>{{el.cena}}€</td>
+            <td>{{el.kolicina}}</td>
+            <td>{{el.cena*el.kolicina}}€</td>
+            <td>{{el.datum}}</td>
+        </tr>
+        </tbody>
+    </table>
+    
+        

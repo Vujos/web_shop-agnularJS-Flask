@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-sm-6">
+    <p ng-show="lc.failed">Neuspešno logovanje!</p>
+    <form ng-show="lc.showLogin" ng-submit="lc.login()">
+        <div class="form-group">
+            <div class="col-sm-10">   
+                <label class="control-label col-sm-12">Korisnicko ime:</label>       
+                <input type="text" class="form-control" ng-model="lc.korisnik.username" placeholder="Korisnicko ime">
+            </div>
+            </div>
+        <div class="form-group">    
+            <div class="col-sm-10">   
+                <label class="control-label col-sm-12">Lozinka:</label>   
+                <input type="password" class="form-control" ng-model="lc.korisnik.password" 
+                placeholder="Lozinka">
+                </div>
+            </div>
+        <div class="form-group">          
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-success">Prijavi se</button>
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="col-sm-6">
+        <div ng-submit="lc.registracija()">
+            <form class="form-horizontal">
+                <div class="form-group">
+                <label class="control-label col-sm-12">Korisnicko ime:</label>
+                <div class="col-sm-10">          
+                    <input type="text" class="form-control" ng-model="lc.korisnik.korisnicko" 
+                    placeholder="Korisnicko ime" required pattern=".{5,}">
+                </div>
+                </div>    
+                <div class="form-group">
+                <label class="control-label col-sm-12">Email:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" ng-model="lc.korisnik.email" placeholder="Email">
+                </div>
+                </div>
+                <div class="form-group">
+                <label class="control-label col-sm-12">Lozinka:</label>
+                <div class="col-sm-10">          
+                    <input type="password" class="form-control" ng-model="lc.korisnik.lozinka"
+                    placeholder="Lozinka" required pattern=".{5,}">
+                </div>
+                </div>    
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-success">Registruj se</button>
+                </div>
+            </form>
+        </div>
+    </div>  
+</div>

@@ -1,0 +1,32 @@
+body {
+    padding-top: 5rem;
+}
+
+.poruka{
+    position: fixed;
+    z-index: 999;
+    float: right;
+}
+
+.btn-group .button {
+    background-color: rgb(65, 154, 206); /* Green */
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-group .button:hover {
+    background-color: #2c71b1;
+}
+
+.pretraga {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

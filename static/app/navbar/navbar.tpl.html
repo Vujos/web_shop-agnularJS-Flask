@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Web shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false"
+        aria-label="Prikaži/sakrij meni">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" ui-sref-active="active" ng-show="nb.loggedIn">
+                <a class="nav-link" ui-sref="profil">Profil</a>
+            </li>
+            <li class="nav-item" ui-sref-active="active" ng-show="nb.autorizovan">
+                <a class="nav-link" ui-sref="dodajProizvod">Dodaj proizvod</a>
+            </li>
+            <li class="nav-item" ui-sref-active="active" ng-show="nb.loggedIn && !nb.autorizovan">
+                <a class="nav-link" ui-sref="korpa">Korpa</a>
+            </li>
+            <li class="nav-item" ui-sref-active="active" ng-show="!nb.loggedIn">
+                <a class="nav-link" ui-sref="login">Login</a>
+            </li>
+            <li class="nav-item" ng-show="nb.loggedIn">
+                <a class="nav-link" href="" ng-click="nb.logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Web shop</title>
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="resources/favicon.png">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body ng-app="Aplikacija">
+
+    <ui-view name="navbar"></ui-view>
+    
+    <div class="container">
+        <ui-view></ui-view>
+    </div>
+    
+    <script src="js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.js/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <script src="js/angularjs/angular.min.js"></script>
+    <script src="js/angularjs-ui-router/angular-ui-router.min.js"></script>
+    <script src="js/angularjs-file-upload/ng-file-upload-all.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/proizvodi/proizvodi.js"></script>
+    <script src="app/proizvod/proizvod.js"></script>
+    <script src="app/kategorije/kategorije.js"></script>
+    <script src="app/korpa/korpa.js"></script>
+    <script src="app/admin panel/adminPanel.js"></script>
+    <script src="app/profil/profil.js"></script>
+    <script src="app/login/login.js"></script>
+    <script src="app/services/loginService.js"></script>
+    <Script src="app/navbar/navbar.js"></Script>
+</body>
+
+</html>

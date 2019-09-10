@@ -1,0 +1,96 @@
+<div class="row justify-content-end">
+    <div class="poruka alert alert-success col-lg-4 col-right" role="alert" ng-if="prof.poruka">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>{{prof.poruka}}</strong>
+    </div>
+</div>
+
+<br>
+<h3>Osnovne informacije:</h3>
+<br>
+<div class="row">
+    <div class="col">
+        <div class="form-group">
+                <label class="control-label col-sm-8">Email:</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" placeholder="Email" ng-model="prof.korisnikZaIzmenu.email">
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-8">Broj telefona:</label>
+            <div class="col-sm-8">          
+                <input type="text" class="form-control" placeholder="Broj telefona" ng-model="prof.korisnikZaIzmenu.telefon">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-8">Potvrdi izmene:</label>   
+            <div class="col-sm-8">
+                <button type="button" class="btn btn-primary col-sm-12" ng-click="prof.izmeniProfil()">Izmeni profil</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-group">
+            <label class="control-label col-sm-8">Ime:</label>
+            <div class="col-sm-8">          
+                <input type="text" class="form-control" placeholder="Ime" ng-model="prof.korisnikZaIzmenu.ime">
+            </div>
+        </div>    
+        <div class="form-group">
+            <label class="control-label col-sm-8">Prezime:</label>
+            <div class="col-sm-8">          
+                <input type="text" class="form-control" placeholder="Prezime" ng-model="prof.korisnikZaIzmenu.prezime">
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<h3>Informacije o adresi:</h3>
+<br>
+
+<div class="row">
+    <div class="col">
+        <div class="form-group">
+            <label class="control-label col-sm-8">Ulica:</label>
+            <div class="col-sm-8">          
+                <input type="text" class="form-control" placeholder="Ulica" ng-model="prof.adresaZaIzmenu.ulica">
+            </div>
+        </div>    
+        <div class="form-group">
+            <label class="control-label col-sm-8">Broj zgrade:</label>
+            <div class="col-sm-8">          
+                <input type="text" class="form-control" placeholder="Broj zgrade" ng-model="prof.adresaZaIzmenu.broj">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-8">Postanski broj:</label>
+            <div class="col-sm-8">          
+                <input type="text" class="form-control" placeholder="Postanski broj" ng-model="prof.adresaZaIzmenu.postanski_broj">
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-group">
+            <label class="control-label col-sm-8">Drzava:</label>
+            <div class="col-sm-8">          
+                <select class="form-control" ng-options="drzava.naziv for drzava in prof.drzave 
+                track by drzava.id" ng-model="prof.adresaZaIzmenu.drzava" ng-change="prof.dobaviGrad()"></select>
+            </div>
+        </div>    
+        <div class="form-group">
+            <label class="control-label col-sm-8">Grad:</label>
+            <div class="col-sm-8">          
+                <select class="form-control" ng-options="grad.naziv for grad in prof.gradovi 
+                track by grad.id" ng-model="prof.adresaZaIzmenu.grad"></select>
+            </div>
+        </div>
+        <div class="form-group">       
+            <label class="control-label col-sm-8">Potvrdi izmene:</label> 
+            <div class="col-sm-8">
+                <button type="button" class="btn btn-primary col-sm-12" ng-click="prof.izmeniAdresu()">Izmeni informacije o adresi</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
